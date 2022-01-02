@@ -1,5 +1,7 @@
 import React, { useState,useEffect } from "react";
 import DropDownList from "./Dropdownlist.jsx";
+const URL=process.env.PORT || 'http://www.songsterr.com/a/ra/songs.json?pattern=';
+// import fetch from 'node-fetch';
 
 function App() {
 
@@ -16,7 +18,7 @@ function App() {
         // console.log(newval)
         if (newval.slice(-1) === " ") {
             // console.log("call api..................with " + newval)
-            const reqstr = 'http://www.songsterr.com/a/ra/songs.json?pattern=' + newval;
+            const reqstr = URL + newval;
             const request = new Request(reqstr)
 
             await fetch(request, {
