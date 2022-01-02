@@ -19,9 +19,9 @@ function App() {
         if (newval.slice(-1) === " ") {
             // console.log("call api..................with " + newval)
             const reqstr = URL + newval;
-            const request = new Request(reqstr)
+            // const request = new Request(reqstr)
 
-            await fetch(request, {
+            await fetch(reqstr, {
                 method: "get"
             }).then(res => res.json())
                 .then(result => {
